@@ -168,3 +168,10 @@ Safari_ShowOverlayStatusBar: false                        # View - Show Status B
 Safari_ShowSidebarInNewWindows: false                     # View - Show Sidebar
 Safari_SidebarViewModeIdentifier: "Bookmarks"             # View - Show Sidebar Mode ("Bookmarks","Reading List","Social Links")
 Safari_ShowFrequentlyVisitedSites: true                   # Bookmarks - Show Frequently Visited in Favorites
+
+
+Trackpad_Enabled: false                                   # Enable trackpad configuration
+Trackpad_TapToClick: 0                                    # Enable tap to click for this user
+Trackpad_TapToDrag: 0                                     # Enable tap to drag (without drag lock)
+Trackpad_Tracking: 2.0                                    # Set trackpad tracking speed (0.0 - 3.0)
+Trackpad_ZoomScreen: false                                # Enable screen zoom with Ctrl-Scroll

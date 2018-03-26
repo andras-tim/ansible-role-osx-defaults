@@ -13,3 +13,4 @@
 - { include_tasks: language-region.yml,       tags: "language-region",       when: LanguageRegion_Enabled|default(false)|bool }
 - { include_tasks: mission-control.yml,       tags: "mission-control",       when: MissionControl_Enabled|default(false)|bool }
 - { include_tasks: safari.yml,                tags: "safari",                when: Safari_Enabled|default(false)|bool }
+- { include_tasks: trackpad.yml,              tags: "trackpad",              when: Trackpad_Enabled|default(false)|bool }
