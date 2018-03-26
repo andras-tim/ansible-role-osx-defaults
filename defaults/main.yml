@@ -108,6 +108,8 @@ General_AppleScrollerPagingBehavior: 0                    # Click in the scrollb
 General_NSCloseAlwaysConfirmsChanges: false               # Ask to keep changes when closing documents
 General_CloseWindowsWhenQuittingApp: false                # Close windows when quitting an application
 General_NSScrollAnimationEnabled: true                    # Smooth scrolling (Disable on older Macs)
+General_ExpandSavePanel: false                            # Expand save panel
+General_ShowBatteryPercent: NO                            # Show battery percentage in menu bar
 
 
 ICloud_Enabled: false                                     # Enable iCloud configuration
@@ -193,3 +195,4 @@ Trackpad_TapToClick: 0                                    # Enable tap to click 
 Trackpad_TapToDrag: 0                                     # Enable tap to drag (without drag lock)
 Trackpad_Tracking: 2.0                                    # Set trackpad tracking speed (0.0 - 3.0)
 Trackpad_ZoomScreen: false                                # Enable screen zoom with Ctrl-Scroll
+Trackpad_SetCursorSize: 1.0                               # Set the cursor size
