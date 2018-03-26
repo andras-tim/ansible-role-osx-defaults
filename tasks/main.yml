@@ -3,6 +3,7 @@
 - { include_tasks: bluetooth.yml,             tags: "bluetooth",             when: Bluetooth_Enabled|default(false)|bool }
 - { include_tasks: dashboard.yml,             tags: "dashboard",             when: Dashboard_Enabled|default(false)|bool }
 - { include_tasks: date-time.yml,             tags: "date-time",             when: DateTime_Enabled|default(false)|bool }
+- { include_tasks: desktop-hot-corners.yml,   tags: "desktop-hot-corners",   when: DesktopHotCorners_Enabled|default(false)|bool }
 - { include_tasks: desktop-screen-saver.yml,  tags: "desktop-screen-saver",  when: DesktopScreenSaver_Enabled|default(false)|bool }
 - { include_tasks: displays.yml,              tags: "displays",              when: Displays_Enabled|default(false)|bool }
 - { include_tasks: dock.yml,                  tags: "dock",                  when: Dock_Enabled|default(false)|bool }

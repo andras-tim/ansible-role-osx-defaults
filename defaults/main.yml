@@ -32,6 +32,24 @@ DateTime_FlashDateSeparators: false                       # Flash the time separ
 DateTime_IsAnalog: false                                  # Analog menu bar clock
 
 
+DesktopHotCorners_Enabled: false                          # Enable Desktop Hot Corners configuration
+                                                          # Possible values:
+                                                          #  0: no-op
+                                                          #  2: Mission Control
+                                                          #  3: Show application windows
+                                                          #  4: Desktop
+                                                          #  5: Start screen saver
+                                                          #  6: Disable screen saver
+                                                          #  7: Dashboard
+                                                          # 10: Put display to sleep
+                                                          # 11: Launchpad
+                                                          # 12: Notification Center
+DesktopHotCorners_TopLeft: 0                              # Set Top Left hot corner action
+DesktopHotCorners_TopRight: 0                             # Set Top Right hot corner action
+DesktopHotCorners_BottomLeft: 0                           # Set Bottom Left hot corner action
+DesktopHotCorners_BottomRight: 0                          # Set Bottom Right hot corner action
+
+
 DesktopScreenSaver_Enabled: false                         # Enable Desktop and Screen Saver configuration
 DesktopScreenSaver_BackGroundImage: ""                    # Background image - e.g. /Users/eric/src/github/lafarer/osx-ansible-config/images/toy-story-02.jpg
 
