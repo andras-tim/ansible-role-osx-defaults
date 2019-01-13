@@ -1,6 +1,6 @@
 ---
 - name: "Language & Region - Prefered languages (in order of preference {{ LanguageRegion_Languages }}"
-  osx_defaults: { domain: 'NSGlobalDomain', key: 'AppleLocale', type: array, value: "{{ LanguageRegion_Languages }}" }
+  osx_defaults: { domain: 'NSGlobalDomain', key: 'AppleLanguages', type: array, value: "{{ LanguageRegion_Languages }}" }
   when: LanguageRegion_Languages is defined
 
 - name: "Language & Region - Locale and Currency"
