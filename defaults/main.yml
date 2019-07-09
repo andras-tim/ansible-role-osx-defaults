@@ -72,6 +72,7 @@ Dock_MinimizeToApplication: false                         # Minimize windows app
 Dock_LaunchAnim: true                                     # Animate opening applications
 Dock_Autohide: false                                      # Automatically hide and show the Dock
 Dock_ShowProcessIndicators: true                          # Show indicator for open applications
+Dock_ShowRecentApps: true                                 # Show recent applications in Dock
 Dock_ShowHidden: false                                    # Display translucent Dock icons for hidden applications
 
 
