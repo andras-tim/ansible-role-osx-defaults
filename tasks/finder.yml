@@ -122,3 +122,8 @@
   osx_defaults: { domain: 'com.apple.finder', key: 'QLEnableTextSelection', type: bool, value: "{{ Finder_QLEnableTextSelection }}" }
   when: Finder_QLEnableTextSelection is defined
   notify: restart Finder
+
+- name: "Finder - Extra - Add Quit Menu"
+  osx_defaults: { domain: 'com.apple.finder', key: 'QuitMenuItem', type: bool, value: "{{ Finder_QuitMenuItem }}" }
+  when: Finder_QuitMenuItem is defined
+  notify: restart Finder
