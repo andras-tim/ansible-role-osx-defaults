@@ -1,4 +1,6 @@
 [![BSD licensed][badge-license]][link-license]
+[![Galaxy Role][badge-role]][link-galaxy]
+[![Downloads][badge-downloads]][link-galaxy]
 [![Build Status][badge-travis]][link-travis]
 
 
@@ -42,6 +44,10 @@ BSD
 
 [badge-license]: https://img.shields.io/github/license/andras-tim/ansible-role-osx-defaults.svg
 [link-license]: https://raw.githubusercontent.com/andras-tim/ansible-role-osx-defaults/master/LICENSE
+
+[badge-role]: https://img.shields.io/ansible/role/48747.svg
+[badge-downloads]: https://img.shields.io/ansible/role/d/48747.svg
+[link-galaxy]: https://galaxy.ansible.com/andras_tim/ansible-role-osx-defaults/
 
 [badge-travis]: https://travis-ci.org/andras-tim/ansible-role-osx-defaults.svg?branch=master
 [link-travis]: https://travis-ci.org/andras-tim/ansible-role-osx-defaults
