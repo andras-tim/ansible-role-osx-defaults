@@ -9,9 +9,9 @@ matrix:
     # Mojave (10.14)
     - os: osx
       osx_image: xcode11.3
-    # High Sierra (10.13)
-    - os: osx
-      osx_image: xcode10.1
+#    # High Sierra (10.13)
+#    - os: osx
+#      osx_image: xcode10.1
 
 install:
   # Install test requirements
