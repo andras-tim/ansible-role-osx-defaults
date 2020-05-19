@@ -72,6 +72,7 @@ Dock_MinimizeToApplication: false                         # Minimize windows app
 Dock_LaunchAnim: true                                     # Animate opening applications
 Dock_Autohide: false                                      # Automatically hide and show the Dock
 Dock_ShowProcessIndicators: true                          # Show indicator for open applications
+Dock_ShowRecentApps: true                                 # Show recent applications in Dock
 Dock_ShowHidden: false                                    # Display translucent Dock icons for hidden applications
 
 
@@ -95,6 +96,7 @@ Finder_ShowStatusBar: false                               # Show Status Bar
 Finder_ShowSidebar: true                                  # Show Side Bar
 Finder_ColumnShowIcons: true                              # Show Preview
 Finder_FXShowPosixPathInTitle: false                      # Show full POSIX path as Finder window title
+Finder_QuitMenuItem: false                                # Show Quit Menu
 
 
 General_Enabled: false                                    # Enable General configuration

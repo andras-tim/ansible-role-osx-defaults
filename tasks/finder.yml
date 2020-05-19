@@ -103,7 +103,7 @@
   notify: restart Finder
 
 - name: "Finder - Extra - Show Hidden Files"
-  osx_defaults: { domain: 'com.apple.finder', key: 'AppleShowAllFiles', type: bool, value: "{{ Finder_AppleShowAllFiles }}" }
+  osx_defaults: { domain: 'com.apple.finder', key: 'AppleShowAllFiles', type: string, value: "{{ Finder_AppleShowAllFiles }}" }
   when: Finder_AppleShowAllFiles is defined
   notify: restart Finder
 
@@ -121,4 +121,9 @@
 - name: "Finder - Extra - Allow text selection in Quick Look/Preview"
   osx_defaults: { domain: 'com.apple.finder', key: 'QLEnableTextSelection', type: bool, value: "{{ Finder_QLEnableTextSelection }}" }
   when: Finder_QLEnableTextSelection is defined
+  notify: restart Finder
+
+- name: "Finder - Extra - Add Quit Menu"
+  osx_defaults: { domain: 'com.apple.finder', key: 'QuitMenuItem', type: bool, value: "{{ Finder_QuitMenuItem }}" }
+  when: Finder_QuitMenuItem is defined
   notify: restart Finder

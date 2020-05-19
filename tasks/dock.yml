@@ -49,6 +49,11 @@
   when: Dock_ShowProcessIndicators is defined
   notify: restart Dock
 
+- name: "Dock - Show recent applications"
+  osx_defaults: { domain: 'com.apple.dock', key: 'show-recents', type: boolean, value: "{{Dock_ShowRecentApps}}" }
+  when: Dock_ShowRecentApps is defined
+  notify: restart Dock
+
 - name: "Dock - Extra - Display translucent Dock icons for hidden applications"
   osx_defaults: { domain: 'com.apple.dock', key: 'showhidden', type: boolean, value: "{{Dock_ShowHidden}}" }
   when: Dock_ShowHidden is defined
