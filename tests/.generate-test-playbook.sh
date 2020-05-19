@@ -4,12 +4,11 @@ set -eufo pipefail
 function main()
 {
     cd "$(dirname "$0")"
-    {
-        get_header
-        if [ "${1-:}" == '--enable-tasks' ]; then
-            get_variables
-        fi
-    } >test.yml
+
+    get_header
+    if [ "${1-:}" == '--enable-tasks' ]; then
+        get_variables
+    fi
 }
 
 function get_header()
