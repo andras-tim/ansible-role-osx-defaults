@@ -1,15 +1,17 @@
 ---
-language: python
-python: "2.7"
-
-# Use the new container infrastructure
 sudo: false
+language: objective-c
 
-# Install ansible
-addons:
-  apt:
-    packages:
-    - python-pip
+# Reference for OS X Versions:
+# https://docs.travis-ci.com/user/reference/osx/#macos-version
+matrix:
+  include:
+    # Mojave (10.14)
+    - os: osx
+      osx_image: xcode11.3
+    # High Sierra (10.13)
+    - os: osx
+      osx_image: xcode10.1
 
 install:
   # Install Ansible
@@ -19,11 +21,38 @@ install:
   - ansible --version
 
   # Create ansible.cfg with correct roles_path
-  - echo -e '[defaults]\nroles_path = ../:../roles:./roles' >ansible.cfg
+  - echo -e '[defaults]\nforce_color = True\nroles_path = ../:../roles:./roles' | tee ansible.cfg
 
 script:
+  # Generate test.yml without variables
+  - tests/generate-test-playbook.sh
+
+  # Test defaults do nothing
+  - ansible-playbook -i tests/inventory tests/test.yml | tee /tmp/test01-defaults.out
+  - >
+    tail /tmp/test01-defaults.out | grep -q 'changed=0.*failed=0' \
+      && { echo 'Defaults test: PASS' >&2; } \
+      || { echo 'Defaults test: FAIL' >&2; exit 1; }
+
+  # Generate test.yml with enabled tasks
+  - tests/generate-test-playbook.sh --enable-tasks
+
   # Check the role/playbook's syntax.
   - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
+
+  # Test the playbook
+  - ansible-playbook -i tests/inventory tests/test.yml | tee /tmp/test02-change.out
+  - >
+    tail /tmp/test02-change.out | grep -q 'changed=[^0].*failed=0' \
+      && { echo 'Change test: PASS' >&2; } \
+      || { echo 'Change test: FAIL' >&2; exit 1; }
+
+  # Test idempotence of the playbook
+  - ansible-playbook -i tests/inventory tests/test.yml | tee /tmp/test03-idempotence.out
+  - >
+    tail /tmp/test03-idempotence.out | grep -q 'changed=0.*failed=0' \
+      && { echo 'Idempotence test: PASS' >&2; } \
+      || { echo 'Idempotence test: FAIL' >&2; exit 1; }
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
