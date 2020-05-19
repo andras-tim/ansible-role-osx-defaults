@@ -52,3 +52,12 @@
 - name: "General - Extra - Smooth scrolling"
   osx_defaults: { domain: 'NSGlobalDomain', key: 'NSScrollAnimationEnabled', type: bool, value: "{{ General_NSScrollAnimationEnabled }}" }
   when: General_NSScrollAnimationEnabled is defined
+
+- name: "General - Expand save panel"
+  osx_defaults: { domain: 'NSGlobalDomain', key: 'NSNavPanelExpandedStateForSaveMode', type: bool, value: "{{ General_ExpandSavePanel }}" }
+  when: General_ExpandSavePanel is defined
+
+- name: "General - Show battery percent"
+  osx_defaults: { domain: 'com.apple.menuextra.battery', key: 'ShowPercent', type: string, value: "{{ General_ShowBatteryPercent }}" }
+  when: General_ShowBatteryPercent is defined
+  notify: restart MenuBar
