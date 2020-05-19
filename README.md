@@ -24,7 +24,7 @@ Please check the [defaults/main.yml](defaults/main.yml) file for available varia
 ``` yaml
 - hosts: servers
   roles:
-    - role: lafarer.osx-defaults
+    - role: andras_tim.ansible_role_osx_defaults
       vars:
         Bluetooth_Enabled: true
         Bluetooth_ShowInMenuBar: false
