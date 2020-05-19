@@ -1,30 +1,37 @@
 ---
 - name: "Trackpad - Set tap to click for this user"
-  osx_defaults: { domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad', key: 'Clicking', type: int, value: "{{Trackpad_TapToClick}}" }
+  osx_defaults: { domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad', key: 'Clicking', type: int,
+                  value: "{{ Trackpad_TapToClick }}" }
   when: Trackpad_TapToClick is defined
 
 - name: "Trackpad - Set tap to click in login window 1/2"
-  osx_defaults: { domain: 'NSGlobalDomain', host: 'currentHost', key: 'com.apple.mouse.tapBehavior', type: int, value: "{{Trackpad_TapToClick}}" }
+  osx_defaults: { domain: 'NSGlobalDomain', host: 'currentHost', key: 'com.apple.mouse.tapBehavior', type: int,
+                  value: "{{ Trackpad_TapToClick }}" }
   when: Trackpad_TapToClick is defined
 
 - name: "Trackpad - Set tap to click in login window 2/2"
-  osx_defaults: { domain: 'NSGlobalDomain', key: 'com.apple.mouse.tapBehavior', type: int, value: "{{Trackpad_TapToClick}}" }
+  osx_defaults: { domain: 'NSGlobalDomain', key: 'com.apple.mouse.tapBehavior', type: int,
+                  value: "{{ Trackpad_TapToClick }}" }
   when: Trackpad_TapToClick is defined
 
 - name: "Trackpad - Set drag without drag lock 1/2"
-  osx_defaults: { domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad', key: 'Dragging', type: int, value: "{{Trackpad_TapToDrag}}" }
+  osx_defaults: { domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad', key: 'Dragging', type: int,
+                  value: "{{ Trackpad_TapToDrag }}" }
   when: Trackpad_TapToDrag is defined
 
 - name: "Trackpad - Set drag without drag lock 2/2"
-  osx_defaults: { domain: 'com.apple.AppleMultitouchTrackpad', key: 'Dragging', type: int, value: "{{Trackpad_TapToDrag}}" }
+  osx_defaults: { domain: 'com.apple.AppleMultitouchTrackpad', key: 'Dragging', type: int,
+                  value: "{{ Trackpad_TapToDrag }}" }
   when: Trackpad_TapToDrag is defined
 
 - name: "Trackpad - Set tracking speed"
-  osx_defaults: { domain: 'NSGlobalDomain', key: 'com.apple.trackpad.scaling', type: float, value: "{{Trackpad_Tracking}}" }
+  osx_defaults: { domain: 'NSGlobalDomain', key: 'com.apple.trackpad.scaling', type: float,
+                  value: "{{ Trackpad_Tracking }}" }
   when: Trackpad_Tracking is defined
 
 - name: "Trackpad - Zoom screen with Ctrl-Scroll 1/2"
-  osx_defaults: { domain: 'com.apple.universalaccess', key: 'closeViewScrollWheelToggle', type: bool, value: "{{Trackpad_ZoomScreen}}" }
+  osx_defaults: { domain: 'com.apple.universalaccess', key: 'closeViewScrollWheelToggle', type: bool,
+                  value: "{{ Trackpad_ZoomScreen }}" }
   become: true
   when: Trackpad_ZoomScreen is defined
 
@@ -34,6 +41,7 @@
   when: Trackpad_ZoomScreen is defined
 
 - name: "Trackpad - Set cursor size"
-  osx_defaults: { domain: 'com.apple.universalaccess', key: 'mouseDriverCursorSize', type: float, value: "{{Trackpad_SetCursorSize}}" }
+  osx_defaults: { domain: 'com.apple.universalaccess', key: 'mouseDriverCursorSize', type: float,
+                  value: "{{ Trackpad_SetCursorSize }}" }
   become: true
   when: Trackpad_SetCursorSize is defined

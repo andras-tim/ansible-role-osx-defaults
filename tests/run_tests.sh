@@ -39,7 +39,7 @@ function exec_yaml_analyzers()
     (
         set -x
         yamllint -f colored -c "${BASE_DIR}/tests/yamllint.yaml" "${BASE_DIR}"
-        ansible-lint -v --force-color "${BASE_DIR}"
+        ansible-lint -v --force-color -x 503 "${BASE_DIR}"
     )
 }
 
@@ -56,7 +56,7 @@ function run_ansible_on_test_playbooks()
         exec_ansible_w_status_check 'Production' 'changed=[^0].*failed=0' "${BASE_DIR}/tests/test_all_modules.yml"
 
         # Test idempotence
-        exec_ansible_w_status_check 'Idempotence' 'changed=0.*failed=0' "${BASE_DIR}/tests/test_all_modules.yml"
+        exec_ansible_w_status_check 'Idempotence' 'changed=0.*failed=0' "${BASE_DIR}/tests/test_all_modules.yml" --skip-tags always_changing_on_travis
     fi
 }
 

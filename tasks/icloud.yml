@@ -1,4 +1,5 @@
 ---
 - name: "iCloud - Save to iCloud by default"
-  osx_defaults: { domain: 'NSGlobalDomain', key: 'NSDocumentSaveNewDocumentsToCloud', type: bool, value: "{{ ICloud_NSDocumentSaveNewDocumentsToCloud }}" }
+  osx_defaults: { domain: 'NSGlobalDomain', key: 'NSDocumentSaveNewDocumentsToCloud', type: bool,
+                  value: "{{ ICloud_NSDocumentSaveNewDocumentsToCloud }}" }
   when: ICloud_NSDocumentSaveNewDocumentsToCloud is defined
