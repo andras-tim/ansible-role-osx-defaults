@@ -40,6 +40,7 @@
 
 - name: "Date Time - Menu bar clock format"
   osx_defaults: { domain: 'com.apple.menuextra.clock', key: 'DateFormat', type: string, value: "{{DateTime_DateFormat}}" }
+  become: true
   when: DateTime_DateFormat is defined
   notify: restart MenuBar
 
