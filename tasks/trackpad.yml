@@ -25,12 +25,15 @@
 
 - name: "Trackpad - Zoom screen with Ctrl-Scroll 1/2"
   osx_defaults: { domain: 'com.apple.universalaccess', key: 'closeViewScrollWheelToggle', type: bool, value: "{{Trackpad_ZoomScreen}}" }
+  become: true
   when: Trackpad_ZoomScreen is defined
 
 - name: "Trackpad - Zoom screen with Ctrl-Scroll 2/2"
   osx_defaults: { domain: 'com.apple.universalaccess', key: 'HIDScrollZoomModifierMask', type: int, value: 262144 }
+  become: true
   when: Trackpad_ZoomScreen is defined
 
 - name: "Trackpad - Set cursor size"
   osx_defaults: { domain: 'com.apple.universalaccess', key: 'mouseDriverCursorSize', type: float, value: "{{Trackpad_SetCursorSize}}" }
+  become: true
   when: Trackpad_SetCursorSize is defined
